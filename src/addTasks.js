@@ -1,5 +1,6 @@
 import classTask from './tasks.js'
 import { allTasks } from './index.js';
+import printTasks from './printTasks.js';
 
 export default function addTasks(){
 
@@ -12,6 +13,7 @@ export default function addTasks(){
     if(title != ""){
         let task = new classTask(title, description, duedate, proyect, priority);
         allTasks.push(task);
+        printTasks();
     }
 
 }
