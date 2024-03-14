@@ -45,6 +45,15 @@ body{
     padding: 2rem;
     
 }
+.tasks-container{
+    padding: 1rem;
+}
+
+.card{
+    padding: 1rem;
+    border: 1px solid #111827;
+    border-radius: 1rem;
+}
 
 ul li{
     margin-top: 1rem;
