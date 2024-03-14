@@ -1,16 +1,21 @@
-import { format } from "date-fns";
+import { format, isPast } from "date-fns";
 import { allTasks } from "./index.js";
 
 let filteredTasks = [];
 
 export default function navFilter(section){
+    let today = format(new Date(), 'dd MMM yyy');
+
     if(section === "All Tasks"){
         filteredTasks = allTasks;
 
     } else if(section === "Today"){
-        filteredTasks = allTasks.filter((task) => task.duedate === format(new Date(), 'dd MMM yyy'));
+        filteredTasks = allTasks.filter((task) => task.duedate === today);
     
-    } else{
+    } else if(section === "Expired"){
+        filteredTasks = allTasks.filter((task) => isPast(task.duedate) && task.duedate < today);
+
+    }else{
         filteredTasks = allTasks.filter((task) => task.proyect === section);
 
     }

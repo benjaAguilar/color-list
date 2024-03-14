@@ -13,7 +13,7 @@ export default function addTasks(){
     if(title != ""){
         let task = new classTask(title, description, duedate, proyect, priority);
         allTasks.push(task);
-        printTasks();
+        printTasks("All Tasks");
     }
 
 }

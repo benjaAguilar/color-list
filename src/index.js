@@ -13,6 +13,7 @@ let addingModal = document.querySelector('#task-adder');
 let addTaskBtn = document.querySelector('#createTask');
 let allTasksSection = document.querySelector('#all-tasks');
 let todaySection = document.querySelector('#today');
+let expiredSection = document.querySelector('#expired');
 let exampleSection = document.querySelector('#example');
 
 //datepicker config for duedate
@@ -21,7 +22,7 @@ const picker = datepicker('#duedate', {
         const value = format(date, 'dd MMM yyy');
         input.value = value;
     },
-    minDate: new Date(),
+    
 });
 
 showModalBtn.addEventListener('click', () => {addingModal.showModal()});
@@ -29,4 +30,5 @@ addTaskBtn.addEventListener('click', addTasks);
 
 allTasksSection.addEventListener('click', () => {printTasks(allTasksSection.textContent)});
 todaySection.addEventListener('click', () => {printTasks(todaySection.textContent)});
+expiredSection.addEventListener('click', () => {printTasks(expiredSection.textContent)});
 exampleSection.addEventListener('click', () => {printTasks(exampleSection.textContent)});
