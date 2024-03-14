@@ -63,3 +63,7 @@ dialog{
     width: 80vw;
     height: 80vh;
 }
+
+.task-done{
+    text-decoration: line-through;
+}

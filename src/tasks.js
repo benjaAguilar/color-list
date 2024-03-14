@@ -5,6 +5,6 @@ export default class task{
         this.duedate = duedate,
         this.proyect = proyect,
         this.priority = priority,
-        this.check = false;
+        this.check = false
     }
 }

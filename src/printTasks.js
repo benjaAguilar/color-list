@@ -16,6 +16,14 @@ export default function printTasks(){
         let editBtn = document.createElement('button');
         let deleteBtn = document.createElement('button');
 
+        //see and change the state of the task (finished or pendient) 
+        checkBox.checked = task.check;
+        checkBox.addEventListener("change", () => {
+            task.check = checkBox.checked;
+            task.check ? cardDiv.classList.add("task-done") : cardDiv.classList.remove("task-done");
+            
+        });
+
         let paraContent = [task.title, task.description, task.duedate, task.proyect, task.priority];
         let paraClasses = ["card-title", "description", "expires", "proyect", "priority"];
 
