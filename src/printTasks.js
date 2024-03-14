@@ -1,15 +1,19 @@
-import { allTasks } from "./index.js";
+import navFilter from "./navigationFilter.js";
 
-export default function printTasks(){
+export default function printTasks(section){
 
+    let sectionTitle = document.querySelector('.title');
     let tasksContainer = document.querySelector('.tasks-container');
+    let filteredTasks = navFilter(section);
+
+    sectionTitle.textContent = section;
 
     while(tasksContainer.firstChild){
         tasksContainer.removeChild(tasksContainer.firstChild);
 
     }
 
-    allTasks.forEach(task => {
+    filteredTasks.forEach(task => {
         let cardDiv = document.createElement('div');
         let checkBox = document.createElement('input');
         checkBox.setAttribute("type", "checkbox");
