@@ -18,8 +18,7 @@
                 <li><a href="#" id="expired">Expired</a></li>
             </ul>
             <p>Proyects <button id="new-proyect">+</button></p>
-            <ul>
-                <li><a href="#" id="example">Example</a></li>
+            <ul id="proyect-list">
             </ul>
         </div>
         <div class="list-content">
@@ -49,7 +48,6 @@
 
                 <select id="select-proyect">
                     <option value="none" selected>None</option>
-                    <option value="Example">Example</option>
                 </select>
 
                 <select id="select-priority">
@@ -61,6 +59,23 @@
 
                 <input type="submit" id="createTask" value="add">
             </div>
+        </form>
+    </dialog>
+    <dialog id="proyect-adder">
+        <form method="dialog">
+            <input type="text" placeholder="Proyect Name" id="proyect" required>
+
+            <div class="picker" 
+            acp-show-rgb="no"
+            acp-show-hsl="no"
+            acp-show-hex="no"
+            acp-palette="PALETTE_MATERIAL_CHROME"
+            acp-palette-editable>
+            Color:
+
+            </div>
+
+            <input type="submit" value="create" id="create-proyect">
         </form>
     </dialog>
 </body>
