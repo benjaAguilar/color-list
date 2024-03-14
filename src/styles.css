@@ -1,3 +1,5 @@
+@import '~js-datepicker/dist/datepicker.min.css';
+
 *{
     margin: 0;
     padding: 0;
@@ -46,4 +48,9 @@ body{
 
 ul li{
     margin-top: 1rem;
+}
+
+dialog{
+    width: 80vw;
+    height: 80vh;
 }
