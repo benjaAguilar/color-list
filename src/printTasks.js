@@ -15,6 +15,7 @@ export default function printTasks(section){
 
     filteredTasks.forEach(task => {
         let cardDiv = document.createElement('div');
+        let pColor = document.createElement('div');
         let checkBox = document.createElement('input');
         checkBox.setAttribute("type", "checkbox");
         let editBtn = document.createElement('button');
@@ -41,13 +42,17 @@ export default function printTasks(section){
             cardDiv.appendChild(p);
         });
 
+        console.log(task.color);
         cardDiv.classList.add('card');
         editBtn.classList.add('card-edit');
         deleteBtn.classList.add('card-delete');
-
+        pColor.style.backgroundColor = task.color;
+        pColor.classList.add('p-color');
+        
         editBtn.textContent = "Edit";
         deleteBtn.textContent = "Delete";
 
+        cardDiv.appendChild(pColor);
         cardDiv.appendChild(editBtn);
         cardDiv.appendChild(deleteBtn);
         tasksContainer.appendChild(cardDiv);

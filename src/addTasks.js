@@ -12,6 +12,7 @@ export default function addTasks(){
 
     if(title != ""){
         let task = new classTask(title, description, duedate, proyect, priority);
+        task.getColor();
         allTasks.push(task);
         printTasks("All Tasks");
     }
