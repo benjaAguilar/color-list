@@ -1,5 +1,6 @@
 import { format, isPast } from "date-fns";
 import { allTasks } from "./index.js";
+import task from "./tasks.js";
 
 let filteredTasks = [];
 
@@ -19,6 +20,11 @@ export default function navFilter(section){
         filteredTasks = allTasks.filter((task) => task.proyect === section);
 
     }
+
+    filteredTasks.sort((taskA, taskB) => {
+        return taskA.priority - taskB.priority
+        
+    });
 
     return filteredTasks;
 }
