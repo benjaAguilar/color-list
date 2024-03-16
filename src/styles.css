@@ -38,8 +38,26 @@ body{
     padding: 2rem;
 }
 
+.logo{
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
 .addNote{
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
     justify-self: end;
+    border: 3px solid #fbbf24;
+    border-radius: 5px;
+    padding: 1rem;
+    background: none;
+}
+
+.addNote:hover{
+    background-color: #fbbf2430;
+    cursor: pointer;
+    
 }
 
 .sidebar{
