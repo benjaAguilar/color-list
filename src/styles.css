@@ -54,7 +54,7 @@ body{
     background: none;
 }
 
-.addNote:hover{
+.addNote:hover, #new-proyect:hover{
     background-color: #fbbf2430;
     cursor: pointer;
     
@@ -62,7 +62,50 @@ body{
 
 .sidebar{
     padding: 2rem;
+    font-size: 1.5rem;
     
+}
+
+ul{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+li{
+    display: flex;
+    align-items: center;
+    border: 2px solid transparent;
+    padding: 1rem;
+    gap: 1rem;
+}
+
+li:hover{
+    border: 2px solid #fbbf24;
+    background-color: #fbbf2430;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.proyect-title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1rem;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    padding: 0.5rem;
+    color: #fbbf2490;
+    border: 3px solid #fbbf2490;
+    border-radius: 5px;
+}
+
+#new-proyect{
+    font-size: 1rem;
+    border: 2px solid #fbbf24;
+    border-radius: 5px;
+    padding: 0.5rem;
+    background: none;
 }
 
 .p-color{
@@ -79,13 +122,6 @@ body{
     padding: 1rem;
     border: 1px solid #111827;
     border-radius: 1rem;
-}
-
-ul li{
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-top: 1rem;
 }
 
 dialog{
