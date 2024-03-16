@@ -119,10 +119,44 @@ li:hover{
 }
 
 .card{
+    display: grid;
+    grid-template-columns: 25px 1fr 1fr;
+    gap: 1rem;
     padding: 1rem;
-    border: 1px solid #111827;
-    border-radius: 1rem;
+    border: 2px solid #fbbf24;
+    border-radius: 5px;
 }
+
+.check{
+    grid-row: 1 / 4;
+    width: 25px;
+    height: 25px;
+    align-self: baseline;
+    justify-self: center;
+}
+
+.card-title{
+    grid-column: 2 / 3;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.description{
+    grid-column: 2 / 4;
+}
+
+.extra-info{
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+}
+
+.card-btns{
+    grid-row: 1;
+    grid-column: 3 / 4;
+    justify-self: end;
+}
+
 
 dialog{
     width: 80vw;
