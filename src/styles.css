@@ -111,7 +111,8 @@ li:hover{
 .p-color{
     width: 20px;
     height: 20px;
-    border-radius: 999px;
+    border: 2px solid #fbbf24;
+    border-radius: 5px;
 }
 
 .tasks-container{
@@ -152,9 +153,16 @@ li:hover{
 }
 
 .card-btns{
+    display: flex;
+    gap: 1rem;
     grid-row: 1;
     grid-column: 3 / 4;
     justify-self: end;
+}
+
+.task-edit:hover, 
+.task-delete:hover{
+    cursor: pointer;
 }
 
 
