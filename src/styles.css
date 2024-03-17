@@ -152,6 +152,12 @@ li:hover{
     justify-content: space-between;
 }
 
+.extra-info div{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
 .card-btns{
     display: flex;
     gap: 1rem;

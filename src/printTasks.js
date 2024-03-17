@@ -1,4 +1,8 @@
 import navFilter from "./navigationFilter.js";
+import flag from './imgs/flag.svg';
+import expired from './imgs/expired.svg';
+import edit from './imgs/edit.svg';
+import del from './imgs/delete.svg'; 
 
 export default function printTasks(section){
 
@@ -16,10 +20,15 @@ export default function printTasks(section){
     filteredTasks.forEach(task => {
         let cardDiv = document.createElement('div');
         let pColor = document.createElement('div');
+        let extraInfo = document.createElement('div');
+        let btnsContainer = document.createElement('div');
         let checkBox = document.createElement('input');
         checkBox.setAttribute("type", "checkbox");
         let editBtn = document.createElement('button');
         let deleteBtn = document.createElement('button');
+
+        let due = task.duedate;
+        let priority = task.priority;
 
         //see and change the state of the task (finished or pendient) 
         checkBox.checked = task.check;
@@ -29,32 +38,87 @@ export default function printTasks(section){
             
         });
 
-        let paraContent = [task.title, task.description, task.duedate, task.proyect, task.priority];
-        let paraClasses = ["card-title", "description", "expires", "proyect", "priority"];
+        let titleAndDesciption = [task.title, task.description];
+        let tydClasses = ["card-title", "description"];
 
-        cardDiv.appendChild(checkBox);
+        let extraContent = [task.duedate, task.proyect, task.priority];
+        let extraClasses = ["expires", "proyect", "priority"];
 
-        paraContent.forEach(function(string, i){
+        titleAndDesciption.forEach(function(string, i){
             let p = document.createElement('p');
             p.textContent = string;
-            p.classList.add(paraClasses[i]);
+            p.classList.add(tydClasses[i]);
 
             cardDiv.appendChild(p);
         });
 
-        console.log(task.color);
+        extraContent.forEach(function(string, i){
+            let p = document.createElement('p');
+            let div = document.createElement('div');
+            let img = document.createElement('img');
+            let isImg = false;
+            p.textContent = string;
+            p.classList.add(extraClasses[i]);
+
+            if(string === due){
+                img.src = expired; 
+                isImg = true;
+                console.log("duedate")
+            } 
+
+            if(string === priority){
+                img.src = flag; 
+                isImg = true;
+                console.log("priority");
+            } 
+                
+
+            if(isImg){
+                div.appendChild(img);
+                div.appendChild(p);
+
+            } else{
+                //TASK.PROYECT HERE
+                div.appendChild(pColor);
+                div.appendChild(p);
+
+            }
+            
+            extraInfo.appendChild(div);
+            isImg = false;
+        });
+
+        let btn = "edit";
+        for(let i = 1; i <= 2; i++){
+            let div = document.createElement('div');
+            let img = document.createElement('img');
+
+            if(btn === "edit"){
+                div.classList.add('task-edit');
+                img.src = edit;
+                btn = "";
+
+            } else{
+                div.classList.add('task-delete');
+                img.src = del;
+
+            } 
+
+            div.appendChild(img);
+            btnsContainer.appendChild(div);
+        }
+
+        
         cardDiv.classList.add('card');
-        editBtn.classList.add('card-edit');
-        deleteBtn.classList.add('card-delete');
+        extraInfo.classList.add('extra-info');
+        btnsContainer.classList.add('card-btns');
         pColor.style.backgroundColor = task.color;
         pColor.classList.add('p-color');
-        
-        editBtn.textContent = "Edit";
-        deleteBtn.textContent = "Delete";
+        checkBox.classList.add('check');
 
-        cardDiv.appendChild(pColor);
-        cardDiv.appendChild(editBtn);
-        cardDiv.appendChild(deleteBtn);
+        cardDiv.appendChild(btnsContainer);
+        cardDiv.appendChild(extraInfo);
+        cardDiv.appendChild(checkBox);
         tasksContainer.appendChild(cardDiv);
     });
 }
