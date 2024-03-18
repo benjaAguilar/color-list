@@ -22,6 +22,15 @@ export default function navFilter(section){
     }
 
     filteredTasks.sort((taskA, taskB) => {
+        console.log(taskA.check);
+        if(taskA.check){
+            return taskA.priority - taskB.priority + 10
+
+        } else if(taskB.check){
+            return taskA.priority - taskB.priority - 10
+
+        }
+
         return taskA.priority - taskB.priority
         
     });
