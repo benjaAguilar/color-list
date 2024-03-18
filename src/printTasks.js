@@ -24,14 +24,15 @@ export default function printTasks(section){
         let btnsContainer = document.createElement('div');
         let checkBox = document.createElement('input');
         checkBox.setAttribute("type", "checkbox");
-        let editBtn = document.createElement('button');
-        let deleteBtn = document.createElement('button');
 
         let due = task.duedate;
         let priority = task.priority;
 
         //see and change the state of the task (finished or pendient) 
         checkBox.checked = task.check;
+        if(task.check){
+            cardDiv.classList.add('task-done');
+        }
         checkBox.addEventListener("change", () => {
             task.check = checkBox.checked;
             task.check ? cardDiv.classList.add("task-done") : cardDiv.classList.remove("task-done");
