@@ -87,6 +87,11 @@ li:hover{
     cursor: pointer;
 }
 
+#proyect-list{
+    overflow-y: scroll;
+    max-height: 200px;  
+}
+
 .proyect-title{
     display: flex;
     align-items: center;
@@ -116,6 +121,11 @@ li:hover{
 }
 
 .tasks-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    overflow-y: scroll;
+    max-height: 500px;  
     padding: 1rem;
 }
 
@@ -179,4 +189,9 @@ dialog{
 
 .task-done{
     text-decoration: line-through;
+}
+
+.tasks-container::-webkit-scrollbar,
+#proyect-list::-webkit-scrollbar{
+    display: none;
 }
