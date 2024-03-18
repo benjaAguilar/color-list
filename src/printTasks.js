@@ -3,6 +3,7 @@ import flag from './imgs/flag.svg';
 import expired from './imgs/expired.svg';
 import edit from './imgs/edit.svg';
 import del from './imgs/delete.svg'; 
+import delTask from "./delTask.js";
 
 export default function printTasks(section){
 
@@ -102,6 +103,7 @@ export default function printTasks(section){
             } else{
                 div.classList.add('task-delete');
                 img.src = del;
+                div.addEventListener('click', () => {delTask(task)});
 
             } 
 
