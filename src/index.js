@@ -51,7 +51,3 @@ allTasksSection.addEventListener('click', () => {printTasks(allTasksSection.text
 todaySection.addEventListener('click', () => {printTasks(todaySection.textContent)});
 expiredSection.addEventListener('click', () => {printTasks(expiredSection.textContent)});
 doneSection.addEventListener('click', () => {printTasks(doneSection.textContent)});
-
-let example = new Proyect('Example', 'red');
-allProyects.push(example);
-printProyects();

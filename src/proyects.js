@@ -11,7 +11,7 @@ export class Proyect{
 export function addProyects(color){
     let proyectName = document.querySelector('#proyect').value;
 
-    if(proyectName === 'All Tasks' || proyectName === 'Today' || proyectName === 'Expired'){
+    if(proyectName === 'All Tasks' || proyectName === 'Today' || proyectName === 'Expired' || proyectName === 'Done'){
         alert('invalid name');
         proyectName = '';
     }
