@@ -16,7 +16,10 @@ export default function navFilter(section){
     } else if(section === "Expired"){
         filteredTasks = allTasks.filter((task) => isPast(task.duedate) && task.duedate < today);
 
-    }else{
+    } else if(section === "Done"){
+        filteredTasks = allTasks.filter((task) => task.check === true);
+
+    } else{
         filteredTasks = allTasks.filter((task) => task.proyect === section);
 
     }

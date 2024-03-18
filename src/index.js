@@ -24,7 +24,7 @@ let addProyectBtn = document.querySelector('#create-proyect')
 let allTasksSection = document.querySelector('#all-tasks');
 let todaySection = document.querySelector('#today');
 let expiredSection = document.querySelector('#expired');
-let exampleSection = document.querySelector('#example');
+let doneSection = document.querySelector('#done');
 
 //datepicker config for duedate
 const picker = datepicker('#duedate', {
@@ -50,6 +50,7 @@ addProyectBtn.addEventListener('click', () => {addProyects(proyectColor)});
 allTasksSection.addEventListener('click', () => {printTasks(allTasksSection.textContent)});
 todaySection.addEventListener('click', () => {printTasks(todaySection.textContent)});
 expiredSection.addEventListener('click', () => {printTasks(expiredSection.textContent)});
+doneSection.addEventListener('click', () => {printTasks(doneSection.textContent)});
 
 let example = new Proyect('Example', 'red');
 allProyects.push(example);
