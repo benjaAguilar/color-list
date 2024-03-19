@@ -44,9 +44,8 @@ body{
 }
 
 .addNote{
-    width: 60px;
-    height: 60px;
-    font-size: 2rem;
+    font-weight: bold;
+    font-size: 1rem;
     justify-self: end;
     border: 3px solid #fbbf24;
     border-radius: 5px;
@@ -118,8 +117,8 @@ label{
 }
 
 .sidebar{
-    padding: 2rem;
-    font-size: 1.5rem;
+    padding: 1rem;
+    font-size: 1.2rem;
     
 }
 
@@ -150,19 +149,21 @@ li:hover{
 }
 
 .proyect-title{
+    font-weight: bold;
     display: flex;
     align-items: center;
     justify-content: space-between;
     font-size: 1rem;
-    margin-top: 3rem;
-    margin-bottom: 2rem;
-    padding: 0.5rem;
-    color: #fbbf2490;
-    border: 3px solid #fbbf2490;
-    border-radius: 5px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    color: #fbbf24;
+    border-top: 2px solid #fbbf2490;
+    
 }
 
 #new-proyect{
+    font-weight: bold;
     font-size: 1rem;
     border: 2px solid #fbbf24;
     border-radius: 5px;
