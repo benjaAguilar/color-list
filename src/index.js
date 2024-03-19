@@ -32,6 +32,7 @@ const picker = datepicker('#duedate', {
         const value = format(date, 'dd MMM yyy');
         input.value = value;
     },
+    minDate: new Date(),
     
 });
 
@@ -51,3 +52,5 @@ allTasksSection.addEventListener('click', () => {printTasks(allTasksSection.text
 todaySection.addEventListener('click', () => {printTasks(todaySection.textContent)});
 expiredSection.addEventListener('click', () => {printTasks(expiredSection.textContent)});
 doneSection.addEventListener('click', () => {printTasks(doneSection.textContent)});
+
+printTasks('All Tasks');

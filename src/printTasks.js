@@ -3,6 +3,7 @@ import flag from './imgs/flag.svg';
 import expired from './imgs/expired.svg';
 import edit from './imgs/edit.svg';
 import del from './imgs/delete.svg'; 
+import cake from './imgs/cake.svg';
 import delTask from "./delTask.js";
 import editTask from "./editTask.js";
 
@@ -17,6 +18,21 @@ export default function printTasks(section){
     while(tasksContainer.firstChild){
         tasksContainer.removeChild(tasksContainer.firstChild);
 
+    }
+
+    //If there are no tasks
+    if(filteredTasks.length === 0){
+        let div = document.createElement('div');
+        let img = document.createElement('img');
+        let p = document.createElement('p');
+
+        img.src = cake;
+        p.textContent = "All done here!";
+        div.classList.add('no-tasks');
+        
+        div.appendChild(img);
+        div.appendChild(p);
+        tasksContainer.appendChild(div);
     }
 
     filteredTasks.forEach(task => {

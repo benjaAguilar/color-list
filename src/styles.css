@@ -237,3 +237,22 @@ li:hover{
 #proyect-list::-webkit-scrollbar{
     display: none;
 }
+
+.no-tasks{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    height: 400px;
+}
+
+.no-tasks img{
+    width: 200px;
+}
+
+.no-tasks p{
+    color: #fbbf2480;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
