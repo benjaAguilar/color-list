@@ -25,7 +25,6 @@ export default function navFilter(section){
     }
 
     filteredTasks.sort((taskA, taskB) => {
-        console.log(taskA.check);
         if(taskA.check){
             return taskA.priority - taskB.priority + 10
 

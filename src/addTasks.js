@@ -1,6 +1,7 @@
 import classTask from './tasks.js'
 import { allTasks, closeAddModal } from './index.js';
 import printTasks from './printTasks.js';
+import { setStorage } from './storage.js';
 
 export default function addTasks(){
 
@@ -15,6 +16,7 @@ export default function addTasks(){
         let task = new classTask(title, description, duedate, proyect, priority);
         task.getColor();
         allTasks.push(task);
+        setStorage("t");
         printTasks("All Tasks");
         closeAddModal();
         

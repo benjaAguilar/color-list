@@ -4,6 +4,7 @@ import printTasks from './printTasks';
 import { Proyect, addProyects } from './proyects.js';
 import printProyects from './printProyects';
 import { format } from 'date-fns';
+import { getStorage } from './storage';
 
 const datepicker = require('js-datepicker');
 const AColorPicker = require('a-color-picker');
@@ -67,4 +68,4 @@ todaySection.addEventListener('click', () => {printTasks(todaySection.textConten
 expiredSection.addEventListener('click', () => {printTasks(expiredSection.textContent)});
 doneSection.addEventListener('click', () => {printTasks(doneSection.textContent)});
 
-printTasks('All Tasks');
+getStorage();

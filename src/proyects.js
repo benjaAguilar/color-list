@@ -1,5 +1,6 @@
 import { allProyects, closeProyectModal } from "./index.js";
 import printProyects from "./printProyects.js";
+import { setStorage } from "./storage.js";
 
 export class Proyect{
     constructor(name, color){
@@ -26,6 +27,7 @@ export function addProyects(color){
     if(proyectName != ''){
         let proyect = new Proyect(proyectName, color);
         allProyects.push(proyect);
+        setStorage("p");
         printProyects();
         closeProyectModal();
 

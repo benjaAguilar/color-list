@@ -1,5 +1,6 @@
 import { allTasks } from "./index.js";
 import printTasks from "./printTasks.js";
+import { setStorage } from "./storage.js";
 
 export default function delTask(task){
     let section = document.querySelector('.title').textContent;
@@ -13,4 +14,6 @@ export default function delTask(task){
 
         }
     });
+
+    setStorage('t');
 }

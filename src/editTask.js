@@ -1,6 +1,7 @@
 import { allTasks } from ".";
 import printTasks from "./printTasks";
 import { format } from 'date-fns';
+import { setStorage } from "./storage";
 const datepicker = require('js-datepicker');
 
 const picker = datepicker('#duedate-edit', {
@@ -42,6 +43,7 @@ export default function editTask(task){
             task.getColor();
     
             printTasks(section);
+            setStorage('t');
             editTaskDoneBtn.removeEventListener('click', edit);
         }
     }
