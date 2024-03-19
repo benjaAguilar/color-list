@@ -1,4 +1,4 @@
-import { allProyects } from "./index.js";
+import { allProyects, closeProyectModal } from "./index.js";
 import printProyects from "./printProyects.js";
 
 export class Proyect{
@@ -27,6 +27,7 @@ export function addProyects(color){
         let proyect = new Proyect(proyectName, color);
         allProyects.push(proyect);
         printProyects();
+        closeProyectModal();
 
     }
 }

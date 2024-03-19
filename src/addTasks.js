@@ -1,9 +1,10 @@
 import classTask from './tasks.js'
-import { allTasks } from './index.js';
+import { allTasks, closeAddModal } from './index.js';
 import printTasks from './printTasks.js';
 
 export default function addTasks(){
 
+    let addingModal = document.querySelector('#task-adder');
     let title = document.querySelector('#title').value;
     let description = document.querySelector('#description').value;
     let duedate = document.querySelector('#duedate').value;
@@ -15,6 +16,8 @@ export default function addTasks(){
         task.getColor();
         allTasks.push(task);
         printTasks("All Tasks");
+        closeAddModal();
+        
     }
 
 }

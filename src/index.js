@@ -16,10 +16,12 @@ let proyectColor;
 let showModalBtn = document.querySelector('.addNote');
 let addingModal = document.querySelector('#task-adder');
 let addTaskBtn = document.querySelector('#createTask');
+let cancelAddBtn = document.querySelector('#cancel-add');
 
 let showProyectModalBtn = document.querySelector('#new-proyect');
 let proyectModal = document.querySelector('#proyect-adder');
-let addProyectBtn = document.querySelector('#create-proyect')
+let addProyectBtn = document.querySelector('#create-proyect');
+let cancelProyectBtn = document.querySelector('#cancel-proyect');
 
 let allTasksSection = document.querySelector('#all-tasks');
 let todaySection = document.querySelector('#today');
@@ -42,11 +44,23 @@ AColorPicker.from('.picker')
     proyectColor = color;
 });
 
+export function closeProyectModal(){
+    proyectModal.close();
+    document.querySelector('#proyect-add').reset();
+}
+
+export function closeAddModal(){
+    addingModal.close();
+    document.querySelector('#task-add').reset();
+}
+
 showModalBtn.addEventListener('click', () => {addingModal.showModal()});
 addTaskBtn.addEventListener('click', addTasks);
+cancelAddBtn.addEventListener('click', closeAddModal);
 
 showProyectModalBtn.addEventListener('click', () => {proyectModal.showModal()});
 addProyectBtn.addEventListener('click', () => {addProyects(proyectColor)});
+cancelProyectBtn.addEventListener('click', closeProyectModal);
 
 allTasksSection.addEventListener('click', () => {printTasks(allTasksSection.textContent)});
 todaySection.addEventListener('click', () => {printTasks(todaySection.textContent)});

@@ -15,6 +15,7 @@ export default function editTask(task){
     let section = document.querySelector('.title').textContent;
     let dialog = document.querySelector('#task-editer');
     let editTaskDoneBtn = document.querySelector('#editTask');
+    let cancelEditBtn = document.querySelector('#cancel-edit');
 
     let title = document.querySelector('#title-edit');
     let description = document.querySelector('#description-edit');
@@ -46,5 +47,9 @@ export default function editTask(task){
     }
 
     editTaskDoneBtn.addEventListener('click', edit);
+    cancelEditBtn.addEventListener('click', () => {
+        dialog.close();
+        
+    });
 
 }

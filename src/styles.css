@@ -60,7 +60,10 @@ body{
     
 }
 
-input, select{
+input, select,
+#cancel-add,
+#cancel-edit,
+#cancel-proyect{
     background-color: #fbbf2430;
     color: #fbbf24;
     border: 2px solid #fbbf24;
@@ -78,11 +81,17 @@ select:hover{
     cursor: pointer;
 }
 
-input[type=submit]{
+input[type=submit],
+#cancel-add,
+#cancel-edit,
+#cancel-proyect{
     width: 100%;
 }
 
-input[type=submit]:hover{
+input[type=submit]:hover,
+#cancel-add:hover,
+#cancel-edit:hover,
+#cancel-proyect:hover{
     font-weight: bold;
     cursor: pointer;
 }

@@ -47,7 +47,7 @@
         </div>
     </div>
     <dialog id="task-adder">
-        <form method="dialog">
+        <form method="dialog" id="task-add">
             <div class="card-dialog">
                 <input type="text" id="title" placeholder="Title" required>
 
@@ -69,11 +69,12 @@
                 </select>
 
                 <input type="submit" id="createTask" value="add">
+                <button id="cancel-add">Cancel</button>
             </div>
         </form>
     </dialog>
     <dialog id="proyect-adder">
-        <form method="dialog">
+        <form method="dialog" id="proyect-add">
             <input type="text" placeholder="Proyect Name" id="proyect" required>
 
             <div class="picker" 
@@ -87,6 +88,7 @@
             </div>
 
             <input type="submit" value="create" id="create-proyect">
+            <button id="cancel-proyect">Cancel</button>
         </form>
     </dialog>
     <dialog id="task-editer">
@@ -112,6 +114,7 @@
                 </select>
 
                 <input type="submit" id="editTask" value="Edit">
+                <button id="cancel-edit">Cancel</button>
             </div>
         </form>
     </dialog>
