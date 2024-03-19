@@ -38,7 +38,8 @@ export default function printTasks(section){
         checkBox.addEventListener("change", () => {
             task.check = checkBox.checked;
             task.check ? cardDiv.classList.add("task-done") : cardDiv.classList.remove("task-done");
-            
+            printTasks(section);
+
         });
 
         let titleAndDesciption = [task.title, task.description];
