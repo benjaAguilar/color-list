@@ -27,19 +27,22 @@ export default function editTask(task){
     duedate.value = task.duedate;
     proyect.value = task.proyect;
     priority.value = task.priority;
+    let currentTask = title.value;
 
     dialog.showModal();
 
     function edit(){
-        task.title = title.value 
-        task.description = description.value;
-        task.duedate = duedate.value;
-        task.proyect = proyect.value ;
-        task.priority = priority.value;
-        task.getColor();
-
-        printTasks(section);
-        editTaskDoneBtn.removeEventListener('click', edit);
+        if(currentTask === task.title){
+            task.title = title.value 
+            task.description = description.value;
+            task.duedate = duedate.value;
+            task.proyect = proyect.value ;
+            task.priority = priority.value;
+            task.getColor();
+    
+            printTasks(section);
+            editTaskDoneBtn.removeEventListener('click', edit);
+        }
     }
 
     editTaskDoneBtn.addEventListener('click', edit);

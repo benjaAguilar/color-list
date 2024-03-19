@@ -66,13 +66,13 @@ export default function printTasks(section){
             if(string === due){
                 img.src = expired; 
                 isImg = true;
-                console.log("duedate")
+        
             } 
 
             if(string === priority){
                 img.src = flag; 
                 isImg = true;
-                console.log("priority");
+        
             } 
                 
 
