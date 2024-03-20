@@ -2,6 +2,7 @@ import classTask from './tasks.js'
 import { allTasks, closeAddModal } from './index.js';
 import printTasks from './printTasks.js';
 import { setStorage } from './storage.js';
+import { getColor } from './getColor.js';
 
 export default function addTasks(){
 
@@ -14,7 +15,7 @@ export default function addTasks(){
 
     if(title != ""){
         let task = new classTask(title, description, duedate, proyect, priority);
-        task.getColor();
+        getColor(task);
         allTasks.push(task);
         setStorage("t");
         printTasks("All Tasks");

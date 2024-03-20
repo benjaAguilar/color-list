@@ -6,6 +6,7 @@ import del from './imgs/delete.svg';
 import cake from './imgs/cake.svg';
 import delTask from "./delTask.js";
 import editTask from "./editTask.js";
+import { setStorage } from "./storage.js";
 
 export default function printTasks(section){
 
@@ -54,6 +55,7 @@ export default function printTasks(section){
         checkBox.addEventListener("change", () => {
             task.check = checkBox.checked;
             task.check ? cardDiv.classList.add("task-done") : cardDiv.classList.remove("task-done");
+            setStorage('t');
             printTasks(section);
 
         });

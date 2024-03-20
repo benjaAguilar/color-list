@@ -2,6 +2,7 @@ import { allTasks } from ".";
 import printTasks from "./printTasks";
 import { format } from 'date-fns';
 import { setStorage } from "./storage";
+import { getColor } from "./getColor";
 const datepicker = require('js-datepicker');
 
 const picker = datepicker('#duedate-edit', {
@@ -9,6 +10,7 @@ const picker = datepicker('#duedate-edit', {
         const value = format(date, 'dd MMM yyy');
         input.value = value;
     },
+    minDate: new Date(),
     
 });
 
@@ -40,7 +42,7 @@ export default function editTask(task){
             task.duedate = duedate.value;
             task.proyect = proyect.value ;
             task.priority = priority.value;
-            task.getColor();
+            getColor(task);
     
             printTasks(section);
             setStorage('t');
